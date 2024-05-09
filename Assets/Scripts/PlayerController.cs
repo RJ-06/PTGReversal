@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -84,8 +88,16 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputValue value)
     {
         mi = value.Get<Vector2>();
+        playClip();
+
     }
 
+
+    public void playClip()
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
+    }
     private void OnLook(InputValue value)
     {
         li = value.Get<Vector2>();
