@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 217836401}
   - component: {fileID: 217836400}
   m_Layer: 5
-  m_Name: die
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 608854923}
   - component: {fileID: 608854922}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Transform_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1174688856}
   - component: {fileID: 1174688855}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 1182528057}
   - component: {fileID: 1182528056}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Transform_Camera_AudioListener
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 1244904705}
   - component: {fileID: 1244904704}
   m_Layer: 5
-  m_Name: ltg
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 1415602477}
   - component: {fileID: 1415602476}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 1713728465}
   - component: {fileID: 1713728464}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RectTransform_Canvas_MonoBehaviour_MonoBehaviour_MonoBehaviour_MonoBehaviour_RectTransform_CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 2077923158}
   - component: {fileID: 2077923157}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
