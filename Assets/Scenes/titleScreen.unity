@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 1743226751}
   - component: {fileID: 1743226754}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: Transform_Camera_AudioListener_MonoBehaviour
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
