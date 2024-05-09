@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 608854923}
   - component: {fileID: 608854925}
   m_Layer: 0
-  m_Name: Input System
+  m_Name: CanvasRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 1174688856}
   - component: {fileID: 1174688855}
   m_Layer: 5
-  m_Name: Button
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
