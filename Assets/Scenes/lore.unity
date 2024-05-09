@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 91612026}
   - component: {fileID: 91612025}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
+  m_Name: CanvasRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 915896748}
   - component: {fileID: 915896750}
   m_Layer: 0
-  m_Name: Transform_MonoBehaviour_MonoBehaviour
+  m_Name: MonoBehaviour_tax_s_Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 1087473939}
   - component: {fileID: 1087473938}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 48258678}
   - component: {fileID: 48258680}
   m_Layer: 0
-  m_Name: Event System
+  m_Name: MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 576602952}
   - component: {fileID: 576602951}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: RectTransform_MonoBehaviour_RectTransform_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
