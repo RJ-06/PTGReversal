@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 297405597}
   - component: {fileID: 297405596}
   m_Layer: 0
-  m_Name: Transform_SpriteRenderer
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
