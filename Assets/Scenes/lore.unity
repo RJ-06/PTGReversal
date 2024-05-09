@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 567596976}
   - component: {fileID: 567596975}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: skibi_Camera_AudioListener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

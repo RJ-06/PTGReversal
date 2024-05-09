@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 386659404}
   - component: {fileID: 386659403}
   m_Layer: 0
-  m_Name: enemyType2
+  m_Name: SpriteRenderer_Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

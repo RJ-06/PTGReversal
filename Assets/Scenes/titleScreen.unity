@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 118343689}
   - component: {fileID: 118343688}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
+  m_Name: Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 1743226751}
   - component: {fileID: 1743226754}
   m_Layer: 0
-  m_Name: Transform_Camera_AudioListener_MonoBehaviour
+  m_Name: MonoBehaviour_CanvasRenderer_CanvasRenderer_MonoBehaviour_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
