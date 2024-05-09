@@ -11,7 +11,8 @@ for curdir, dirs, files in os.walk("Assets"):
 
 
 def brainrot():
-    
+    with open("/usr/share/dict/words", "r") as f:
+        EXTWORDS = f.read().splitlines()
     WORDS = [
         "skibidi",
         "gyatt",
@@ -37,8 +38,11 @@ def brainrot():
         "simulator"
     ]
     amazing = []
-    for x in range(5):
+    for x in range(2):
         amazing.append(random.choice(WORDS))
+    for x in range(5):
+        pick = random.choice(EXTWORDS)
+        amazing.append(''.join([x for x in pick if x in string.ascii_letters]))
     return '_'.join(amazing)
     
 
