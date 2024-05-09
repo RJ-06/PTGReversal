@@ -19,23 +19,23 @@ public class PlayerController : MonoBehaviour
     {
         if (ms != 0)
         {
-            if(mi.magnitude != 0 && Vector2.Dot(mi.normalized, md) > -0.5f)
+            if(mn(mi) != 0 && dp(nm(mi), md) > -0.5f)
             {
-                md = Vector3.RotateTowards(md, mi, ts * dt, 0);
+                md = rt(md, mi, ts * dt);
             }
             else
             {
-                float di = 2 + Vector2.Dot(mi.normalized, md) * 2;
-                md = Vector3.RotateTowards(md, mi, ts * di * di * di * dt, 0);
+                float di = 2 + dp(nm(mi), md) * 2;
+                md = rt(md, mi, ts * di * di * dt);
             }
         }
-        else if(mi.magnitude != 0)
+        else if(mn(mi) != 0)
         {
-            md = mi.normalized;
+            md = nm(mi);
         }
 
-        float ss = mi.magnitude * mx;
-        if (Vector2.Dot(mi, md) < 0)
+        float ss = mn(mi) * mx;
+        if (dp(mi, md) < 0)
         {
             ss *= -1;
         }
@@ -72,7 +72,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        transform.position += (Vector3)md * ms * dt;
+        transform.position += dt * ms * cv(md);
+    }
+
+    public void SetVelocity(Vector2 velocity)
+    {
+        ms = mn(velocity);
+        md = nm(velocity);
     }
 
     private void OnMove(InputValue value)
@@ -98,5 +104,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 mi;
     private Vector2 li;
     private Rigidbody2D rb;
+    #endregion
+    #region Helper Functions
+    private Vector2 nm(Vector2 v) { return v.normalized; }
+    private float mn(Vector2 v) { return v.magnitude; }
+    private Vector2 rt(Vector2 v1, Vector2 v2, float a) { return Vector3.RotateTowards(v1, v2, a, 0).normalized; }
+    private float an(Vector2 v1, Vector2 v2) { return Vector2.Angle(v1, v2); }
+    private Vector3 cv(Vector2 v) { return v; }
+    private float dp(Vector2 v1, Vector2 v2) { return Vector2.Dot(v1, v2); }
     #endregion
 }

@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 118343689}
   - component: {fileID: 118343688}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 576602952}
   - component: {fileID: 576602951}
   m_Layer: 5
-  m_Name: RectTransform_Canvas_MonoBehaviour_MonoBehaviour_MonoBehaviour_MonoBehaviour
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,12 +432,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 800, y: 540}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 820673670}
   - component: {fileID: 820673669}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
+  m_Name: ltg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 1114841515}
   - component: {fileID: 1114841514}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 1693671292}
   - component: {fileID: 1693671291}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
+  m_Name: d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 1743226751}
   - component: {fileID: 1743226754}
   m_Layer: 0
-  m_Name: Transform_Camera_AudioListener_MonoBehaviour
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
