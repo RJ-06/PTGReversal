@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 35333417}
   - component: {fileID: 35333416}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -775,7 +775,7 @@ GameObject:
   - component: {fileID: 915896748}
   - component: {fileID: 915896747}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Transform_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
