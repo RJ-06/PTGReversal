@@ -372,7 +372,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5aa061a07489ac1438fc3a347111f032, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -698,8 +698,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1460503051}
-  - component: {fileID: 2111043485}
-  - component: {fileID: 2111043484}
   - component: {fileID: 2111043483}
   - component: {fileID: 1460503050}
   m_Layer: 0
@@ -793,3 +791,5 @@ MonoBehaviour:
   turnSpeed: 5
   acceleration: 5
   deceleration: 5
+  audioSource: {fileID: 556596463}
+  audioClip: {fileID: 8300000, guid: 5aa061a07489ac1438fc3a347111f032, type: 3}
