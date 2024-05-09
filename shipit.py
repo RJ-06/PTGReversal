@@ -90,7 +90,7 @@ for file in bundle:
                             names.append(brainrot()[:5])
                         else:
                             names.append(component_type)
-                if line.strip().startswith("m_Name:") and not line.strip().endswith("HEXAGOn"):
+                if line.strip().startswith("m_Name:") and not line.strip().endswith("HEXAGOn") and len(names) > 0:
                     new_name = "_".join(names)
                     names = []
                     output_bundle.pop()
