@@ -47,11 +47,12 @@ def garbage():
 
 for file in bundle:
     output_bundle = []
+    n = 0
     with open(file, "r") as f:
         mode = False
         d = f.read()
         names = []
-        n = random.randint(1, 10)
+        j = random.randint(1, 10)
         for line in d.splitlines():
             output_bundle.append(line)
             if line.strip().startswith("GameObject:"):
@@ -60,11 +61,11 @@ for file in bundle:
             if not line.startswith(" "):
                 mode = False
             if mode:
-                n -= 1
-                if n > 0:
+                j -= 1
+                if j > 0:
                     continue
                 else:
-                    n = random.randint(1, 10)
+                    j = random.randint(1, 10)
                 if (match:=re.search(r'component:\s*{\s*fileID:\s*(\d+)\s*}', line)):
                     component = match.group(1)
                     matcher = rf'---.*?&{component}\r?\n(\w+):'
