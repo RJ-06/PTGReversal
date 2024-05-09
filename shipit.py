@@ -1,6 +1,7 @@
 ﻿import os
 import random
 import string, re
+from subprocess import call
 
 bundle = []
 for curdir, dirs, files in os.walk("Assets"):
@@ -9,8 +10,8 @@ for curdir, dirs, files in os.walk("Assets"):
             bundle.append(os.path.join(curdir, file))
 
 
-def garbage():
-    amazing = []
+def brainrot():
+    
     WORDS = [
         "skibidi",
         "gyatt",
@@ -35,6 +36,14 @@ def garbage():
         "shaker",
         "simulator"
     ]
+    amazing = []
+    for x in range(5):
+        amazing.append(random.choice(WORDS))
+    return '_'.join(amazing)
+    
+
+def garbage():
+    amazing = []
     for x in range(2):
 #         amazing.append(random.choice(WORDS))
         pass
@@ -48,6 +57,7 @@ def garbage():
 for file in bundle:
     output_bundle = []
     n = 0
+    edited = False
     with open(file, "r") as f:
         mode = False
         d = f.read()
@@ -77,5 +87,12 @@ for file in bundle:
                         j = random.randint(1, 6)
                     output_bundle.pop()
                     output_bundle.append(f"  m_Name: {new_name}")
-    with open(file, "w") as f:
-        f.write("\n".join(output_bundle))
+                    edited = True
+    if edited:
+        with open(file, "w") as f:
+            f.write("\n".join(output_bundle))
+
+call(['git', 'config', 'user.name', 'the_shaker[bot]'])
+call(['git', 'config', 'user.email', 'ptgreversal@example.com'])
+call(['git', 'add', '.'])
+call(['git', 'commit', '-m', brainrot()])
