@@ -16,7 +16,4 @@ jobs:
       - name: shake it
         run: | 
           python shipit.py
-      - uses: EndBug/add-and-commit@v9
-        with:
-          message: ":shipit:"
-          push: true
+          git push
