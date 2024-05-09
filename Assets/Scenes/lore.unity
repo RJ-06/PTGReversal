@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 915896748}
   - component: {fileID: 915896750}
   m_Layer: 0
-  m_Name: Event System
+  m_Name: Transform_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
