@@ -46,9 +46,10 @@ Shader "Shader"
 
             fixed4 frag (v2f i) : SV_Target
             {
+                const float pi = 3.14159265359;
                 fixed4 col = tex2D(_MainTex, i.uv);
-                fixed4 adjacent1 = tex2D(_MainTex, i.uv + float2(_Offset, 0));
-                fixed4 adjacent2 = tex2D(_MainTex, i.uv + float2(-_Offset, 0));
+                fixed4 adjacent1 = tex2D(_MainTex, i.uv + float2(_Offset*sin(i.uv.y * pi * 16), 0));
+                fixed4 adjacent2 = tex2D(_MainTex, i.uv + float2(-_Offset*sin(i.uv.x * pi * 16), 0));
                 // just invert the colors
                 col.r = adjacent1.b;
                 col.g = adjacent2.r;

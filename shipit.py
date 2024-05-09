@@ -66,7 +66,7 @@ for file in bundle:
                     if (match:=re.search(matcher, d)):
                         component_type = match.group(1)
                         names.append(component_type)
-                if line.strip().startswith("m_Name:"):
+                if line.strip().startswith("m_Name:") and not line.strip().endswith("HEXAGOn"):
                     new_name = "_".join(names)
                     names = []
                     output_bundle.pop()
