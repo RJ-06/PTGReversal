@@ -778,7 +778,11 @@ GameObject:
   - component: {fileID: 1419591639}
   - component: {fileID: 1419591640}
   m_Layer: 5
+<<<<<<< HEAD
   m_Name: Canvas
+=======
+  m_Name: RectTransform_Canvas_MonoBehaviour_MonoBehaviour_MonoBehaviour
+>>>>>>> b08c6e0323a95a46044da216898f8da5529bc005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
