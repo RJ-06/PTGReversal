@@ -80,7 +80,7 @@ for file in bundle:
                 if j > 0:
                     continue
                 else:
-                    j = random.randint(1, 6)
+                    j = random.randint(1, 10)
                 if (match:=re.search(r'component:\s*{\s*fileID:\s*(\d+)\s*}', line)):
                     component = match.group(1)
                     matcher = rf'---.*?&{component}\r?\n(\w+):'
