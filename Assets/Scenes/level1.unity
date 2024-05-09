@@ -793,8 +793,3 @@ MonoBehaviour:
   turnSpeed: 5
   acceleration: 5
   deceleration: 5
-<<<<<<< Updated upstream
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
-=======
- 
