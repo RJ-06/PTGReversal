@@ -1,7 +1,6 @@
-﻿import yaml
-import os
+﻿import os
 import random
-import string
+import string, re
 
 bundle = []
 for curdir, dirs, files in os.walk("Assets"):
@@ -36,10 +35,11 @@ def garbage():
         "shaker",
         "simulator"
     ]
-    for x in range(5):
-        amazing.append(random.choice(WORDS))
+    for x in range(2):
+#         amazing.append(random.choice(WORDS))
+        pass
     hashy = ""
-    for x in range(8):
+    for x in range(4):
         hashy += random.choice(string.ascii_letters + string.digits)
     amazing.append(hashy)
     return "_".join(amazing)
@@ -47,9 +47,11 @@ def garbage():
 
 for file in bundle:
     output_bundle = []
+    n = 0
     with open(file, "r") as f:
         mode = False
         d = f.read()
+        names = []
         for line in d.splitlines():
             output_bundle.append(line)
             if line.strip().startswith("GameObject:"):
@@ -57,9 +59,17 @@ for file in bundle:
                 continue
             if not line.startswith(" "):
                 mode = False
-            if mode and line.strip().startswith("m_Name:"):
-                new_name = garbage()
-                output_bundle.pop()
-                output_bundle.append(f"  m_Name: {new_name}")
+            if mode:
+                if (match:=re.search(r'component:\s*{\s*fileID:\s*(\d+)\s*}', line)):
+                    component = match.group(1)
+                    matcher = rf'---.*?&{component}\r?\n(\w+):'
+                    if (match:=re.search(matcher, d)):
+                        component_type = match.group(1)
+                        names.append(component_type)
+                if line.strip().startswith("m_Name:"):
+                    new_name = "_".join(names)
+                    names = []
+                    output_bundle.pop()
+                    output_bundle.append(f"  m_Name: {new_name}")
     with open(file, "w") as f:
         f.write("\n".join(output_bundle))
