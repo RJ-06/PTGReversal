@@ -14,8 +14,9 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - name: shake it
-        run: |
+        run: | 
           python shipit.py
-          git add .
-          git commit -m ":shipit:"
-          git push
+      - uses: actions/add-commit@v9
+        with:
+          message: ":shipit:"
+          push: true
