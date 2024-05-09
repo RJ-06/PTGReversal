@@ -61,11 +61,6 @@ for file in bundle:
             if not line.startswith(" "):
                 mode = False
             if mode:
-                j -= 1
-                if j > 0:
-                    continue
-                else:
-                    j = random.randint(1, 10)
                 if (match:=re.search(r'component:\s*{\s*fileID:\s*(\d+)\s*}', line)):
                     component = match.group(1)
                     matcher = rf'---.*?&{component}\r?\n(\w+):'
@@ -75,6 +70,11 @@ for file in bundle:
                 if line.strip().startswith("m_Name:") and not line.strip().endswith("HEXAGOn"):
                     new_name = "_".join(names)
                     names = []
+                    j -= 1
+                    if j > 0:
+                        continue
+                    else:
+                        j = random.randint(1, 6)
                     output_bundle.pop()
                     output_bundle.append(f"  m_Name: {new_name}")
     with open(file, "w") as f:
