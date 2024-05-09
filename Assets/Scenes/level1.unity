@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 618045800}
   - component: {fileID: 618045799}
   m_Layer: 0
-  m_Name: "The FitnessGram\u2122 Pacer Test is a multistage aerobic capacity test
+  m_Name: Transform_AudioSource
     that progressively gets more difficult as it continues. The 20 meter pacer test
     will begin in 30 seconds. Line up at the start. The running speed starts slowly,
     but gets faster each minute after you hear this signal. [beep] A single lap should
