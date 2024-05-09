@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 567596976}
   - component: {fileID: 567596975}
   m_Layer: 5
-  m_Name: skibi_Camera_AudioListener
+  m_Name: THIS GAME NEEEDS A HERO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 915896748}
   - component: {fileID: 915896750}
   m_Layer: 0
-  m_Name: AudioListener_CanvasRenderer
+  m_Name: Event System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 1087473939}
   - component: {fileID: 1087473938}
   m_Layer: 5
-  m_Name: MonoBehaviour
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

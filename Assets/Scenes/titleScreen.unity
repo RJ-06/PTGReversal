@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 48258678}
   - component: {fileID: 48258680}
   m_Layer: 0
-  m_Name: MonoBehaviour
+  m_Name: Input System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 576602952}
   - component: {fileID: 576602951}
   m_Layer: 5
-  m_Name: RectTransform_MonoBehaviour_RectTransform_MonoBehaviour
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 1546180401}
   - component: {fileID: 1546180400}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 1693671292}
   - component: {fileID: 1693671291}
   m_Layer: 5
-  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
+  m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 1743226751}
   - component: {fileID: 1743226754}
   m_Layer: 0
-  m_Name: MonoBehaviour_CanvasRenderer_CanvasRenderer_MonoBehaviour_Camera
+  m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
