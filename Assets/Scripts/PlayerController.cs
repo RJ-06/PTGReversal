@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float maxSpeed;
+    [SerializeField] float dashMultiplier;
     [SerializeField] float turnSpeed;
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                float di = 2 + dp(nm(mi), md) * 2;
+                var di = 2 + dp(nm(mi), md) * 2;
                 md = rt(md, mi, ts * di * di * dt);
             }
         }
@@ -38,15 +39,15 @@ public class PlayerController : MonoBehaviour
             md = nm(mi);
         }
 
-        float ss = mn(mi) * mx;
+        var ss = mn(mi) * mx;
         if (dp(mi, md) < 0)
         {
             ss *= -1;
         }
-        float sd = ss - ms;
+        var sd = ss - ms;
         if(sd > 0)
         {
-            float aq = ac * dt;
+            var aq = ac * dt;
             //Debug.Log($"A {sd}, {ms}, {aq}");
             if (aq >= sd)
             {
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(sd < 0)
         {
-            float dq = -dc * dt;
+            var dq = -dc * dt;
             //Debug.Log($"D {sd}, {ms}, {dq}");
             if (dq <= sd)
             {
@@ -92,21 +93,27 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
     public void playClip()
     {
         audioSource.clip = audioClip;
         audioSource.Play();
     }
+
     private void OnLook(InputValue value)
     {
-        li = value.Get<Vector2>();
+        var va = value.Get<Vector2>();
+        if(mn(va) != 0)
+            li = nm(va);
     }
 
-
+    private void OnFire()
+    {
+        SetVelocity(dm * mx * nm(li));
+    }
 
     #region Variables
     private float mx => maxSpeed;
+    private float dm => dashMultiplier;
     private float ts => turnSpeed;
     private float ac => acceleration;
     private float dc => deceleration;
