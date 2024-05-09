@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 118343689}
   - component: {fileID: 118343688}
   m_Layer: 5
-  m_Name: Transform
+  m_Name: MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
