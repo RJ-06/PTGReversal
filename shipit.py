@@ -57,7 +57,7 @@ for file in bundle:
                 continue
             if not line.startswith(" "):
                 mode = False
-            if mode and line.strip().startswith("m_Name:"):
+            if mode and line.strip().startswith("m_Name:") and not line.strip().endswith("HEXAGOn"):
                 new_name = garbage()
                 output_bundle.pop()
                 output_bundle.append(f"  m_Name: {new_name}")

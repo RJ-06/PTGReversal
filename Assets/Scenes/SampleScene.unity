@@ -562,15 +562,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2111043482}
-  - component: {fileID: 2111043481}
+  - component: {fileID: 1460503051}
   - component: {fileID: 2111043485}
   - component: {fileID: 2111043484}
   - component: {fileID: 2111043483}
-  - component: {fileID: 1460503051}
   - component: {fileID: 1460503050}
   m_Layer: 0
-  m_Name: in_the_hole_shin_impact_Robux_gyatt_shin_impact_OVMqd6CR
+  m_Name: HEXAGOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,8 +615,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5,
-    type: 3}
+  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -650,7 +647,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111043480}
+  m_GameObject: {fileID: 1460503049}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 877daf3a96cefeb4a833677710a33e24, type: 3}
@@ -666,14 +663,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111043480}
+  m_GameObject: {fileID: 1460503049}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 984954cc1dad37f459bcb19b8b9b10ae,
-    type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 984954cc1dad37f459bcb19b8b9b10ae, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -698,7 +694,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111043480}
+  m_GameObject: {fileID: 1460503049}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
