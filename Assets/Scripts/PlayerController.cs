@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] int maxHealth;
+    [SerializeField] float knockbackStrength;
     [SerializeField] float maxSpeed;
     [SerializeField] float dashMultiplier;
     [SerializeField] float turnSpeed;
@@ -14,10 +16,10 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip audioClip;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        hp = mh;
     }
 
     private void FixedUpdate()
@@ -80,28 +82,38 @@ public class PlayerController : MonoBehaviour
         transform.position += dt * ms * cv(md);
     }
 
-    public void SetVelocity(Vector2 velocity)
+    private void OnTriggerEnter2D(Collider2D cl)
     {
-        ms = mn(velocity);
-        md = nm(velocity);
+        if(cl.CompareTag("Damager"))
+        {
+            hp--;
+            var kb = nm(transform.position - cl.transform.position) * ks;
+            SetVelocity(kb);
+        }
     }
 
-    private void OnMove(InputValue value)
+    public void SetVelocity(Vector2 vl)
     {
-        mi = value.Get<Vector2>();
+        ms = mn(vl);
+        md = nm(vl);
+    }
+
+    private void OnMove(InputValue vl)
+    {
+        mi = vl.Get<Vector2>();
         playClip();
 
     }
 
     public void playClip()
     {
-        audioSource.clip = audioClip;
-        audioSource.Play();
+        au.clip = ad;
+        au.Play();
     }
 
-    private void OnLook(InputValue value)
+    private void OnLook(InputValue vl)
     {
-        var va = value.Get<Vector2>();
+        var va = vl.Get<Vector2>();
         if(mn(va) != 0)
             li = nm(va);
     }
@@ -112,17 +124,22 @@ public class PlayerController : MonoBehaviour
     }
 
     #region Variables
+    private int mh => maxHealth;
+    private float ks => knockbackStrength;
     private float mx => maxSpeed;
     private float dm => dashMultiplier;
     private float ts => turnSpeed;
     private float ac => acceleration;
     private float dc => deceleration;
     private float dt => Time.fixedDeltaTime;
+    private int hp;
     private float ms;
     private Vector2 md;
     private Vector2 mi;
     private Vector2 li;
     private Rigidbody2D rb;
+    private AudioSource au => audioSource;
+    private AudioClip ad => audioClip;
     #endregion
     #region Helper Functions
     private Vector2 nm(Vector2 v) { return v.normalized; }
