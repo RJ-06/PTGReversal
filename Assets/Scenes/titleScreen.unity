@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 118343689}
   - component: {fileID: 118343688}
   m_Layer: 5
-  m_Name: start
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 576602952}
   - component: {fileID: 576602951}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: RectTransform_Canvas_MonoBehaviour_MonoBehaviour_MonoBehaviour_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 820673670}
   - component: {fileID: 820673669}
   m_Layer: 5
-  m_Name: ltg
+  m_Name: RectTransform_CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
