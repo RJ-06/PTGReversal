@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 297405597}
   - component: {fileID: 297405596}
   m_Layer: 0
-  m_Name: Transform_SpriteRenderer
+  m_Name: s
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   m_Layer: 0
-  m_Name: Transform_Camera_AudioListener_MonoBehaviour
+  m_Name: 
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 618045800}
   - component: {fileID: 618045799}
   m_Layer: 0
-  m_Name: Transform_AudioSource
+  m_Name: Music :)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
   m_Layer: 0
-  m_Name: Transform_MonoBehaviour
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
