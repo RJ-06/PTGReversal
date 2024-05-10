@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 297405597}
   - component: {fileID: 297405596}
   m_Layer: 0
-  m_Name: Background
+  m_Name: SpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 619394802}
   - component: {fileID: 619394801}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: Transform_Rigidbody2D_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
