@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 820673670}
   - component: {fileID: 820673669}
   m_Layer: 5
-  m_Name: ltg
+  m_Name: RectTransform_CanvasRenderer_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 1684057712}
   - component: {fileID: 1684057711}
   m_Layer: 5
-  m_Name: RectTransform_MonoBehaviour
+  m_Name: CanvasRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
