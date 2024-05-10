@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 48258678}
   - component: {fileID: 48258680}
   m_Layer: 0
-  m_Name: Input System
+  m_Name: Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 1114841515}
   - component: {fileID: 1114841514}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MonoBehaviour_RectTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 1684057712}
   - component: {fileID: 1684057711}
   m_Layer: 5
-  m_Name: Text
+  m_Name: RectTransform_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
