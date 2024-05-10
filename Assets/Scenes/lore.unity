@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 91612026}
   - component: {fileID: 91612025}
   m_Layer: 5
-  m_Name: MonoBehaviour
+  m_Name: skibi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 960465877}
   - component: {fileID: 960465876}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SPOIL_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
