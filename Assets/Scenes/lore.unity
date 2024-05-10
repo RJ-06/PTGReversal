@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 256657231}
   - component: {fileID: 256657230}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RectTransform_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 915896748}
   - component: {fileID: 915896750}
   m_Layer: 0
-  m_Name: CanvasRenderer_MonoBehaviour_MonoBehaviour
+  m_Name: Transform_thug__MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
