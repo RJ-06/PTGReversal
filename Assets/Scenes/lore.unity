@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 336994179}
   - component: {fileID: 336994178}
   m_Layer: 0
-  m_Name: CanvasRenderer_RectTransform
+  m_Name: RectTransform
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
