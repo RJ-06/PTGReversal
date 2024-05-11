@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 256657231}
   - component: {fileID: 256657230}
   m_Layer: 5
-  m_Name: RectTransform_MonoBehaviour
+  m_Name: CanvasRenderer_MonoBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 960465877}
   - component: {fileID: 960465876}
   m_Layer: 5
-  m_Name: blund_RectTransform_CanvasRenderer_CanvasRenderer_MonoBehaviour_MonoBehaviour
+  m_Name: Transform_Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
