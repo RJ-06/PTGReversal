@@ -976,8 +976,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 576602951}
-        m_TargetAssemblyTypeName: suicide, Assembly-CSharp
-        m_MethodName: KILLYOURSELF
+        m_TargetAssemblyTypeName: selfGoToSleep, Assembly-CSharp
+        m_MethodName: goToSleepYOURSELF
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
