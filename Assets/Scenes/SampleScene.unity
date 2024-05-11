@@ -355,14 +355,13 @@ GameObject:
   - component: {fileID: 618045800}
   - component: {fileID: 618045799}
   m_Layer: 0
-  m_Name: SpriteRenderer_Camera_AudioSource
-    difficult as it continues. The 20 meter pacer test will begin in 30 seconds.
-    Line up at the start. The running speed starts slowly, but gets faster each minute
-    after you hear this signal. [beep] A single lap should be completed each time
-    you hear this sound. [ding] Remember to run in a straight line, and run as long
-    as possible. The second time you fail to complete a lap before the sound, your
-    test is over. The test will begin on the word start. On your mark, get ready,
-    start."
+  m_Name: SpriteRenderer_Camera_AudioSource difficult as it continues. The 20 meter
+    pacer test will begin in 30 seconds. Line up at the start. The running speed
+    starts slowly, but gets faster each minute after you hear this signal. [beep]
+    A single lap should be completed each time you hear this sound. [ding] Remember
+    to run in a straight line, and run as long as possible. The second time you fail
+    to complete a lap before the sound, your test is over. The test will begin on
+    the word start. On your mark, get ready, start."
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +571,7 @@ GameObject:
   - component: {fileID: 2051276139}
   - component: {fileID: 2051276138}
   m_Layer: 0
-  m_Name: square
+  m_Name: HEXAGOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +618,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

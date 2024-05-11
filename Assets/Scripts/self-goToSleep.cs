@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Diagnostics;
 
-public class suicide : MonoBehaviour
+public class selfGoToSleep : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class suicide : MonoBehaviour
         
     }
 
-    public void KILLYOURSELF()
+    public void goToSleepYOURSELF()
     {
         Utils.ForceCrash(ForcedCrashCategory.FatalError);
     }
