@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx0mj3lp83yq3"]
-
-[ext_resource type="Texture2D" uid="uid://bqxolpweng300" path="res://assets/PingaHP.png" id="1_5q5po"]
-
-[node name="hp_1" type="TextureRect"]
-texture = ExtResource("1_5q5po")
-expand_mode = 2
-stretch_mode = 4

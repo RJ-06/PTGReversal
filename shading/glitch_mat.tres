@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://df8oje76t84of"]
-
-[ext_resource type="Shader" path="res://shading/glitch.gdshader" id="1_ypdfm"]
-
-[resource]
-shader = ExtResource("1_ypdfm")
-shader_parameter/offset_amount = 10.0
-shader_parameter/enabled = true

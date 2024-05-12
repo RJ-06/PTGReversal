@@ -1,6 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bpy7e10300e3w"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13e8g"]
-
-[resource]
-Panel/styles/panel = SubResource("StyleBoxFlat_13e8g")
