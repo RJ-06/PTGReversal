@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr1ijpob42wkj"]
+
+[ext_resource type="Texture2D" uid="uid://dny5m4ei1vcxs" path="res://assets/pingas.png" id="1_5eo37"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_y16no"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q82k1"]
+radius = 47.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x0cdm"]
+radius = 49.8197
+
+[node name="player" type="CharacterBody2D"]
+collision_mask = 3
+script = ExtResource("1_y16no")
+
+[node name="Pingas" type="Sprite2D" parent="." groups=["Player"]]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_5eo37")
+
+[node name="physbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q82k1")
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("CircleShape2D_x0cdm")
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hit"]
