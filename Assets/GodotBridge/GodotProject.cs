@@ -15,7 +15,7 @@ public class GodotProject
     private const string GODOT_BINARY_LINUX = "Godot_v4.2.2-stable_linux.x86_64";
     private const string GODOT_BINARY_MAC = "Godot.app/Contents/MacOS/Godot";
     private Process process;
-    public GodotProject(string projectPath)
+    public GodotProject(string projectPath, string scene)
     {
         string zipPath;
         string binaryPath;
@@ -63,7 +63,10 @@ public class GodotProject
 
         process = new Process();
         process.StartInfo.FileName = binaryPath;
-        process.StartInfo.ArgumentList.Add(Path.Combine(Application.streamingAssetsPath, projectPath, "project.godot"));
+        process.StartInfo.Arguments += "--path ";
+        process.StartInfo.Arguments += Path.Combine(Application.streamingAssetsPath, projectPath) + " ";
+        process.StartInfo.Arguments += scene + " ";
+
         //process.StartInfo.RedirectStandardOutput = true;
     }
 
