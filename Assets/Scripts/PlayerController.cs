@@ -89,6 +89,11 @@ public class PlayerController : MonoBehaviour
             hp--;
             var kb = nm(transform.position - cl.transform.position) * ks;
             SetVelocity(kb);
+            if(hp < 0)
+            {
+                enabled = false;
+                selfGoToSleep.YOUSHOULD();
+            }
         }
     }
 
