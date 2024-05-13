@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class GodotProject
