@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class GodotProject
@@ -14,7 +16,11 @@ public class GodotProject
     private const string GODOT_BINARY_WINDOWS = "Godot_v4.2.2-stable_win64.exe";
     private const string GODOT_BINARY_LINUX = "Godot_v4.2.2-stable_linux.x86_64";
     private const string GODOT_BINARY_MAC = "Godot.app/Contents/MacOS/Godot";
-    private Process process;
+    private const string MESSAGE_TOKEN = "[Unity Bridge]: ";
+    private readonly Process process;
+    private readonly string engineArguments;
+
+    public event EventHandler<String> MessageRecieved;
     public GodotProject(string projectPath, string scene)
     {
         string zipPath;
@@ -63,15 +69,31 @@ public class GodotProject
 
         process = new Process();
         process.StartInfo.FileName = binaryPath;
-        process.StartInfo.Arguments += "--path ";
-        process.StartInfo.Arguments += Path.Combine(Application.streamingAssetsPath, projectPath) + " ";
-        process.StartInfo.Arguments += scene + " ";
+        engineArguments = "--path ";
+        engineArguments += Path.Combine(Application.streamingAssetsPath, projectPath) + " ";
+        engineArguments += scene + " ";
 
-        //process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.UseShellExecute = false;
+
+        process.OutputDataReceived += OnOutputDataRecieved;
+    }
+
+    public void Start(string userArguments)
+    {
+        process.StartInfo.Arguments = engineArguments + " ++ " + userArguments;
+        process.Start();
     }
 
     public void Start()
     {
-        process.Start();
+        Start("");
+    }
+    private void OnOutputDataRecieved(object sender, DataReceivedEventArgs e)
+    {
+        if (e.Data.StartsWith(MESSAGE_TOKEN))
+        {
+            MessageRecieved.Invoke(this, e.Data[MESSAGE_TOKEN.Length..]);
+        }
     }
 }
