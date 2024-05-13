@@ -27,5 +27,7 @@ public class GassetsButton : MonoBehaviour
     {
         GodotProject project2 = new("Gassets", "scenes/menu.tscn");
         project2.StartEditor();
+        GodotProject project3 = new("pass-the-godot", "main.tscn");
+        project3.StartEditor();
     }
 }
