@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int maxHealth;
     [SerializeField] float knockbackStrength;
     [SerializeField] float maxSpeed;
-    [SerializeField] float dashMultiplier;
+    [SerializeField] float dashSpeedMultiplier;
+    [SerializeField] float dashTurnMultiplier;
+    [SerializeField] float dashDuration;
+    [SerializeField] float dashFalloffDuration;
+    [SerializeField] float dashCooldown;
     [SerializeField] float turnSpeed;
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
@@ -24,9 +28,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (td > 0)
+            td -= dt;
+        if (cd > 0)
+            cd -= dt;
         if (ms != 0)
         {
-            if(mn(mi) != 0 && dp(nm(mi), md) > -0.5f)
+            if(td > 0)
+            {
+                md = rt(md, mi, ts * dt * lp(1, dr, td / df));
+            }
+            else if(mn(mi) != 0 && dp(nm(mi), md) > -0.5f)
             {
                 md = rt(md, mi, ts * dt);
             }
@@ -41,44 +53,46 @@ public class PlayerController : MonoBehaviour
             md = nm(mi);
         }
 
-        var ss = mn(mi) * mx;
-        if (dp(mi, md) < 0)
+        if (td <= 0)
         {
-            ss *= -1;
-        }
-        var sd = ss - ms;
-        if(sd > 0)
-        {
-            var aq = ac * dt;
-            //Debug.Log($"A {sd}, {ms}, {aq}");
-            if (aq >= sd)
+            var ss = mn(mi) * mx;
+            if (dp(mi, md) < 0)
             {
-                ms = ss;
+                ss *= -1;
             }
-            else
+            var sd = ss - ms;
+            if (sd > 0)
             {
-                ms += aq;
-            }
-        }
-        else if(sd < 0)
-        {
-            var dq = -dc * dt;
-            //Debug.Log($"D {sd}, {ms}, {dq}");
-            if (dq <= sd)
-            {
-                ms = ss;
-            }
-            else
-            {
-                ms += dq;
-                if(ms < 0)
+                var aq = ac * dt;
+                //Debug.Log($"A {sd}, {ms}, {aq}");
+                if (aq >= sd)
                 {
-                    ms *= -1;
-                    md *= -1;
+                    ms = ss;
+                }
+                else
+                {
+                    ms += aq;
+                }
+            }
+            else if (sd < 0)
+            {
+                var dq = -dc * dt;
+                //Debug.Log($"D {sd}, {ms}, {dq}");
+                if (dq <= sd)
+                {
+                    ms = ss;
+                }
+                else
+                {
+                    ms += dq;
+                    if (ms < 0)
+                    {
+                        ms *= -1;
+                        md *= -1;
+                    }
                 }
             }
         }
-
         transform.position += dt * ms * cv(md);
     }
 
@@ -125,14 +139,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnFire()
     {
-        SetVelocity(dm * mx * nm(li));
+        if (mn(mi) == 0 || cd > 0)
+            return;
+        SetVelocity(ds * mx * nm(mi));
+        td = dd + df;
+        cd = dw;
     }
 
     #region Variables
     private int mh => maxHealth;
     private float ks => knockbackStrength;
     private float mx => maxSpeed;
-    private float dm => dashMultiplier;
+    private float ds => dashSpeedMultiplier;
+    private float dr => dashTurnMultiplier;
+    private float dd => dashDuration;
+    private float df => dashFalloffDuration;
+    private float dw => dashCooldown;
     private float ts => turnSpeed;
     private float ac => acceleration;
     private float dc => deceleration;
@@ -141,6 +163,8 @@ public class PlayerController : MonoBehaviour
     private float ms;
     private Vector2 md;
     private Vector2 mi;
+    private float td;
+    private float cd;
     private Vector2 li;
     private Rigidbody2D rb;
     private AudioSource au => audioSource;
@@ -153,5 +177,6 @@ public class PlayerController : MonoBehaviour
     private float an(Vector2 v1, Vector2 v2) { return Vector2.Angle(v1, v2); }
     private Vector3 cv(Vector2 v) { return v; }
     private float dp(Vector2 v1, Vector2 v2) { return Vector2.Dot(v1, v2); }
+    private float lp(float f1, float f2, float t) { return Mathf.Lerp(f1, f2, t); }
     #endregion
 }

@@ -237,7 +237,11 @@ MonoBehaviour:
   maxHealth: 5
   knockbackStrength: 7
   maxSpeed: 5
-  dashMultiplier: 2
+  dashSpeedMultiplier: 2
+  dashTurnMultiplier: 0.5
+  dashDuration: 0.25
+  dashFalloffDuration: 0.5
+  dashCooldown: 2
   turnSpeed: 2
   acceleration: 2
   deceleration: 10
