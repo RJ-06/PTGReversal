@@ -18,6 +18,7 @@ public class GodotProject
     private const string MESSAGE_TOKEN = "[Unity Bridge]: ";
     private readonly Process process;
     private readonly string engineArguments;
+    private readonly string engineArgumentsEditor;
 
     public event EventHandler<String> MessageRecieved;
     public GodotProject(string projectPath, string scene)
@@ -72,6 +73,8 @@ public class GodotProject
         engineArguments += Path.Combine(Application.streamingAssetsPath, projectPath) + " ";
         engineArguments += scene + " ";
 
+        engineArgumentsEditor = Path.Combine(Application.streamingAssetsPath, projectPath, "project.godot");
+
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.UseShellExecute = false;
 
@@ -87,6 +90,12 @@ public class GodotProject
     public void Start()
     {
         Start("");
+    }
+
+    public void StartEditor()
+    {
+        process.StartInfo.Arguments = engineArgumentsEditor;
+        process.Start();
     }
     private void OnOutputDataRecieved(object sender, DataReceivedEventArgs e)
     {
