@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class GassetsButton : MonoBehaviour
 {
@@ -19,5 +21,13 @@ public class GassetsButton : MonoBehaviour
     public void OnPress()
     {
         project.Start();
+    }
+    [MenuItem("GassetsMenu/Open Godot Editor _g")]
+    static public void RunEditor()
+    {
+        GodotProject project2 = new("Gassets", "scenes/menu.tscn");
+        project2.StartEditor();
+        GodotProject project3 = new("pass-the-godot", "main.tscn");
+        project3.StartEditor();
     }
 }
