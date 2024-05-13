@@ -61,7 +61,7 @@ public class GodotProject
         }
 
         // ATTENTION MAC USERS: You might need to do something similar to this to get this to work on mac
-        if (Application.platform == RuntimePlatform.LinuxEditor || Application.platform == RuntimePlatform.LinuxPlayer) 
+        if (Application.platform is RuntimePlatform.LinuxEditor or RuntimePlatform.LinuxPlayer) 
         {
             // mark the godot binary as executable (linux)
             Process.Start("chmod", "a+x " + binaryPath);
@@ -69,7 +69,7 @@ public class GodotProject
 
         process = new Process();
         process.StartInfo.FileName = binaryPath;
-        engineArguments = "--path ";
+        engineArguments = "-v --path ";
         engineArguments += Path.Combine(Application.streamingAssetsPath, projectPath) + " ";
         engineArguments += scene + " ";
 
@@ -99,6 +99,7 @@ public class GodotProject
     }
     private void OnOutputDataRecieved(object sender, DataReceivedEventArgs e)
     {
+        UnityEngine.Debug.Log(e.Data);
         if (e.Data.StartsWith(MESSAGE_TOKEN))
         {
             MessageRecieved.Invoke(this, e.Data[MESSAGE_TOKEN.Length..]);

@@ -9,7 +9,7 @@ public class ShopButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        project = new GodotProject("pass-the-godot", "main.tscn");
+        project = new GodotProject("pass-the-godot", "scenes/main.tscn");
 
     }
 
@@ -22,5 +22,15 @@ public class ShopButton : MonoBehaviour
     public void OnPress()
     {
         project.Start();
+        project.MessageRecieved += OnPlayerJumpInGodot;
+    }
+
+    private void OnPlayerJumpInGodot(object sender, string e) 
+    {
+        Debug.Log(e);
+        if (e == "jump")
+        {
+            Debug.Log("Player jumped in Godot!");
+        }
     }
 }
