@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   knockbackStrength: 7
+  invulnPeriod: 2
   maxSpeed: 5
   dashSpeedMultiplier: 2
   dashTurnMultiplier: 0.5

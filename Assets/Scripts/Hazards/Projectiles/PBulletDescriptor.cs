@@ -22,7 +22,7 @@ public class PBulletDescriptor : ProjectileDescriptor<PBullet>
 
     public override void Spawn()
     {
-        var bullet = Instantiate(prefab);
+        PBullet bullet = Instantiate(prefab);
         bullet.transform.position = spawnPos;
         bullet.rigidbody.velocity = initialVelocity;
         bullet.lifetimeTimer = lifetime;

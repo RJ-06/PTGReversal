@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] int maxHealth;
     [SerializeField] float knockbackStrength;
+    [SerializeField] float invulnPeriod;
     [SerializeField] float maxSpeed;
     [SerializeField] float dashSpeedMultiplier;
     [SerializeField] float dashTurnMultiplier;
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (ti > 0)
+            ti -= dt;
         if (td > 0)
             td -= dt;
         if (cd > 0)
@@ -98,9 +101,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D cl)
     {
-        if(cl.CompareTag("Damager"))
+        if(cl.CompareTag("Damager") && ti <= 0)
         {
             hp--;
+            ti = iv;
             var kb = nm(transform.position - cl.transform.position) * ks;
             SetVelocity(kb);
             if(hp < 0)
@@ -149,6 +153,7 @@ public class PlayerController : MonoBehaviour
     #region Variables
     private int mh => maxHealth;
     private float ks => knockbackStrength;
+    private float iv => invulnPeriod;
     private float mx => maxSpeed;
     private float ds => dashSpeedMultiplier;
     private float dr => dashTurnMultiplier;
@@ -165,6 +170,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mi;
     private float td;
     private float cd;
+    private float ti;
     private Vector2 li;
     private Rigidbody2D rb;
     private AudioSource au => audioSource;

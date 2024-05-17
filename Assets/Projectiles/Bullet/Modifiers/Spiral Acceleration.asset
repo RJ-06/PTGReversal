@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Spiral Acceleration
   m_EditorClassIdentifier: 
   tanAccel: 2
-  centAccel: 8
+  centAccel: 12
   constAccel: {x: 0, y: 0}
