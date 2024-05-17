@@ -26,11 +26,12 @@ public static class GroupUtils
     }
 }
 
+[Serializable]
 public class AngleParam
 {
     public string path;
     public bool useVector;
-    public float vectorMagnitude;
+    public float vectorMagnitude = 1;
 
     public void ApplyParameter(object spawn, float angle)
     {
@@ -41,6 +42,7 @@ public class AngleParam
     }
 }
 
+[Serializable]
 public class PositionParam
 {
     public string path;
@@ -51,6 +53,7 @@ public class PositionParam
     }
 }
 
+[Serializable]
 public class IndexParam
 {
     public string path;

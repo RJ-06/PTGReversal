@@ -12,7 +12,6 @@ public class GRing : ProjectileGroup
     public float endAngle;
     public int numSpawns = 5;
     public bool spawnEnds = true;
-    //public float spawnDuration;
 
     public List<PositionParam> positionAffects;
     public List<AngleParam> angleAffects;

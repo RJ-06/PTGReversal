@@ -16,18 +16,3 @@ public class MAccelerator : MonoBehaviour
         rigidbody.velocity += acceleration * Time.fixedDeltaTime;
     }
 }
-
-public class MAcceleratorDescriptor : ProjectileModifier<PBullet>
-{
-    public float tanAccel;
-    public float centAccel;
-    public Vector2 constAccel;
-
-    public override void Modify(PBullet projectile)
-    {
-        MAccelerator accel = projectile.gameObject.AddComponent<MAccelerator>();
-        accel.relativeAccel = new Vector2(tanAccel, centAccel);
-        accel.absoluteAccel = constAccel;
-        accel.rigidbody = projectile.rigidbody;
-    }
-}
