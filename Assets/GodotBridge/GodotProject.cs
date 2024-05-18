@@ -85,13 +85,14 @@ namespace GodotBridge
 
             _process = new Process();
             _process.StartInfo.FileName = binaryPath;
-            _engineArguments = "-v --path ";
+            _engineArguments = "--path ";
             _engineArguments += Path.Combine(Application.streamingAssetsPath, projectPath) + " ";
             _engineArguments += scene + " ";
 
             _engineArgumentsEditor = Path.Combine(Application.streamingAssetsPath, projectPath, "project.godot");
 
             _process.StartInfo.RedirectStandardOutput = true;
+            _process.StartInfo.RedirectStandardError = true;
             _process.StartInfo.UseShellExecute = false;
 
             _process.OutputDataReceived += OnOutputDataRecieved;
@@ -104,6 +105,8 @@ namespace GodotBridge
             _process.StartInfo.Arguments = _engineArguments + " ++ " + userArguments;
             Debug.Log("Start: " + _process.StartInfo.FileName + " with " + _process.StartInfo.Arguments);
             _process.Start();
+            _process.BeginOutputReadLine();
+            _process.BeginErrorReadLine();
         }
 
         public void Start()
