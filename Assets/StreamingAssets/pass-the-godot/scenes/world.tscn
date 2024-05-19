@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bi3rg5h46lxdf"]
+
+[ext_resource type="PackedScene" uid="uid://1y1lhesu1fb7" path="res://scenes/shop.tscn" id="1_6juu8"]
+[ext_resource type="PackedScene" uid="uid://x7ouoogl7ppe" path="res://scenes/player.tscn" id="1_yi8h6"]
+[ext_resource type="Script" path="res://scripts/go_to_sleep_plane.gd" id="2_v01ja"]
+[ext_resource type="PackedScene" uid="uid://bwll5yj6shuu7" path="res://scenes/jod.tscn" id="4_rerlv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5hmud"]
+
+[sub_resource type="Sky" id="Sky_w2gdl"]
+sky_material = SubResource("ProceduralSkyMaterial_5hmud")
+
+[sub_resource type="Environment" id="Environment_dyofr"]
+background_mode = 2
+sky = SubResource("Sky_w2gdl")
+volumetric_fog_density = 0.1053
+volumetric_fog_albedo = Color(0.339147, 0.597605, 0.696922, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ifeo2"]
+plane = Plane(0, 1, 0, -75)
+
+[node name="World" type="Node3D"]
+
+[node name="Shop" parent="." instance=ExtResource("1_6juu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.69134, 2.31141, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24757, 0.302185, 2.39403)
+use_collision = true
+size = Vector3(29.4609, 0.39563, 18.1347)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dyofr")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_yi8h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.356575, 1.70543, 0.129562)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.897959, -0.0436312, -0.43791, 0.437016, 0.205592, 0.875642, 0.0518255, -0.977665, 0.203681, -0.562294, 0.437207, 0.00488186)
+light_color = Color(1, 1, 0.87, 1)
+light_energy = 1.109
+light_volumetric_fog_energy = 1.838
+shadow_enabled = true
+
+[node name="GoToSleepPlane" type="Area3D" parent="."]
+script = ExtResource("2_v01ja")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GoToSleepPlane"]
+shape = SubResource("WorldBoundaryShape3D_ifeo2")
+
+[node name="Jod" parent="." instance=ExtResource("4_rerlv")]
+
+[connection signal="body_entered" from="GoToSleepPlane" to="GoToSleepPlane" method="_on_body_entered"]

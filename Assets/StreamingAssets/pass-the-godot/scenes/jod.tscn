@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwll5yj6shuu7"]
+
+[ext_resource type="Texture2D" uid="uid://cte8pt5ntncog" path="res://sprites/jod.png" id="1_h7xa8"]
+[ext_resource type="Texture2D" uid="uid://qxv63v8xxom8" path="res://sprites/jod_mouth_open.png" id="2_f3uib"]
+[ext_resource type="Script" path="res://scripts/jod.gd" id="3_saqxw"]
+[ext_resource type="AudioStream" uid="uid://bxgx50wrmothw" path="res://sounds/ttsmaker-file-2024-5-18-17-36-18.mp3" id="4_ellgx"]
+[ext_resource type="AudioStream" uid="uid://b4gn2pjc4ppmm" path="res://sounds/ttsmaker-file-2024-5-18-17-36-40.mp3" id="5_eq25c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdswn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h7xa8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h7xa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_f3uib")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 2.0
+}]
+
+[node name="Jod" type="AnimatedSprite3D"]
+transform = Transform3D(0.682356, 0, 0.73102, 0, 1, 0, -0.73102, 0, 0.682356, -9.69934, 2.04815, 0.21782)
+sprite_frames = SubResource("SpriteFrames_kdswn")
+frame_progress = 1.0
+script = ExtResource("3_saqxw")
+sounds = Array[AudioStream]([ExtResource("4_ellgx"), ExtResource("5_eq25c")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

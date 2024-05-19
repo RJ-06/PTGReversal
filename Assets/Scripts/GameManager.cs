@@ -5,9 +5,11 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
+    public int money;
 
     void Awake()
     {
+        money = 20;
         banana = GetComponent<PlayableDirector>();
         banana.timeUpdateMode = DirectorUpdateMode.Manual;
     }

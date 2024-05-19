@@ -97,16 +97,20 @@ namespace GodotBridge
 
             _process.OutputDataReceived += OnOutputDataRecieved;
             _process.ErrorDataReceived += OnErrorDataRecieved;
+
+            _process.EnableRaisingEvents = true;
+            _process.Exited += OnProcessExited;
             Debug.Log("GodotProject init completed");
         }
-
         public void Start(string userArguments)
         {
             _process.StartInfo.Arguments = _engineArguments + " ++ " + userArguments;
             Debug.Log("Start: " + _process.StartInfo.FileName + " with " + _process.StartInfo.Arguments);
             _process.Start();
+
             _process.BeginOutputReadLine();
             _process.BeginErrorReadLine();
+            
         }
 
         public void Start()
@@ -122,7 +126,6 @@ namespace GodotBridge
 
         private void OnOutputDataRecieved(object sender, DataReceivedEventArgs e)
         {
-            Debug.Log(e.Data);
             if (e.Data.StartsWith(MessageToken))
             {
                 MessageRecieved?.Invoke(this, e.Data[MessageToken.Length..]);
@@ -133,5 +136,13 @@ namespace GodotBridge
         {
             Debug.Log(e.Data);
         }
+
+        private void OnProcessExited(object sender, EventArgs e)
+        {
+            Debug.Log("Process Exited!");
+            _process.CancelOutputRead();
+            _process.CancelErrorRead();
+        }
+
     }
 }

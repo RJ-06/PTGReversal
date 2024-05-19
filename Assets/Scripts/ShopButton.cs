@@ -6,7 +6,9 @@ using UnityEngine.Rendering.Universal.Internal;
 
 public class ShopButton : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
     GodotProject project;
+    private bool firstTime = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +24,27 @@ public class ShopButton : MonoBehaviour
 
     public void OnPress()
     {
-        project.Start();
-        project.MessageRecieved += OnPlayerJumpInGodot;
+        project.Start($"money={gameManager.money} first-time={firstTime}");
+        project.MessageRecieved += OnMessageRecieved;
+        firstTime = false;
     }
 
-    private void OnPlayerJumpInGodot(object sender, string e) 
+    private void OnMessageRecieved(object sender, string message) 
     {
-        Debug.Log(e);
-        if (e == "jump")
+        Debug.Log(message);
+        string key = message.Split("=")[0];
+        string value = message.Split("=")[1];
+        switch (key)
         {
-            Debug.Log("Player jumped in Godot!");
+            case "money":
+                gameManager.money = int.Parse(value);
+                break;
+            case "speed":
+                // TODO
+                break;
+            case "health":
+                // TODO
+                break;
         }
     }
 }

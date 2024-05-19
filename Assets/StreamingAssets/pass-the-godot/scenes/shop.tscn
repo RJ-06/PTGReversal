@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://1y1lhesu1fb7"]
+
+[ext_resource type="Script" path="res://scripts/click_detection.gd" id="1_vdcas"]
+[ext_resource type="PackedScene" uid="uid://beq4qgpdwiadv" path="res://scenes/shop_ui.tscn" id="2_sbgje"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_amep3"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enqy8"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_amep3")
+grow_amount = -3.164
+
+[sub_resource type="QuadMesh" id="QuadMesh_bgjfk"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_enqy8")
+size = Vector2(3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hg76b"]
+size = Vector3(3, 4, 0.025)
+
+[node name="Shop" type="Node3D"]
+script = ExtResource("1_vdcas")
+
+[node name="Display" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("QuadMesh_bgjfk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_hg76b")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+disable_3d = true
+size = Vector2i(300, 400)
+render_target_update_mode = 4
+
+[node name="ShopUI" parent="SubViewport" instance=ExtResource("2_sbgje")]

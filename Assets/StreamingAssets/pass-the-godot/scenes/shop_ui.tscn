@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://beq4qgpdwiadv"]
+
+[ext_resource type="Script" path="res://scripts/shop_ui.gd" id="1_bofkl"]
+[ext_resource type="Script" path="res://scripts/shop.gd" id="2_rhd7h"]
+[ext_resource type="Script" path="res://scripts/shop_item.gd" id="3_egamw"]
+[ext_resource type="PackedScene" uid="uid://cbom84bmmrd6g" path="res://scenes/shop_button.tscn" id="4_ow47j"]
+
+[sub_resource type="Resource" id="Resource_jbvd7"]
+script = ExtResource("3_egamw")
+name = "speed"
+button_text = "Increase Speed: %dJ$"
+inital_price = 5
+price_increase = 3
+stock = 5
+
+[sub_resource type="Resource" id="Resource_cs5dy"]
+script = ExtResource("3_egamw")
+name = "health"
+button_text = "Increase Health: %dJ$"
+inital_price = 3
+price_increase = 2
+stock = 5
+
+[sub_resource type="Resource" id="Resource_2bu0c"]
+script = ExtResource("2_rhd7h")
+shop_items = Array[ExtResource("3_egamw")]([SubResource("Resource_jbvd7"), SubResource("Resource_cs5dy")])
+
+[node name="ShopUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bofkl")
+shop = SubResource("Resource_2bu0c")
+button_scene = ExtResource("4_ow47j")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.5
+offset_right = 38.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "JOD SHOP"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = -33.0
+offset_right = 82.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2

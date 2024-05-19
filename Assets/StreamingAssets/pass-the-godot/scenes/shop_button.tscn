@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cbom84bmmrd6g"]
+
+[node name="Button" type="Button"]
+focus_mode = 0
+text = "Increase Health: 3 J$"
